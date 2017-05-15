@@ -13,3 +13,6 @@ C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHar
 C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.DataAccessLayer.pdb
 C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.DataAccessLayer.dll.config
 C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\obj\Debug\HRS.ConsoleHarness.csprojResolveAssemblyReference.cache
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.dll.config

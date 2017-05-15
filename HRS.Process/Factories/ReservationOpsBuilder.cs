@@ -11,12 +11,12 @@ namespace HRS.Process.Factories
 {
     public class ReservationOpsBuilder
     {
-        public static List<IReservationOperation> BuildReservationOps(Reservation reservation)
+        public static List<AReservationOperation> BuildReservationOps(Reservation reservation)
         {
-            return new List<IReservationOperation>();
+            return new List<AReservationOperation>();
         }
 
-        private List<IReservationOperation> RetrieveHotelConfiguration()
+        private List<AReservationOperation> RetrieveHotelConfiguration()
         {
             return null;
         }

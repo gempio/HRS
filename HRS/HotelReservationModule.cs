@@ -10,6 +10,7 @@ using HRS.Types.Models;
 using HRS.Process.Factories;
 using HRS.Process.Operations;
 using HRS.DataAccessLayer.OperationDALs;
+using HRS.Types.Exceptions;
 
 namespace HRS
 {
@@ -31,23 +32,59 @@ namespace HRS
 
         public ReservationResult MakeReservation(Reservation reservation)
         {
-            List<AReservationOperation> operations = ReservationOpsBuilder.BuildReservationOps(reservation);
-            foreach(AReservationOperation operation in operations)
+            List<AReservationOperation> operations = RetrieveOperations(reservation);
+            return ProcessOperations(operations, reservation);
+        }
+        
+        private ReservationResult ProcessOperations(List<AReservationOperation> operations, Reservation reservation)
+        {
+            //TODO: Need to think about how to exctract the try/catch into a separate method or class.
+            foreach (AReservationOperation operation in operations)
             {
                 try
                 {
-
+                    //Since we know which operations are not essential there
+                    //might be some atomic method cherries that could be ran assynchrously.
+                    operation.ReservationOperation(reservation);
                 }
-                catch(OperationException ex)
+                catch (PriceCheckException exn)
                 {
-                    if(operation.)
+                    return ProcessPriceCheckException(operations, reservation, exn.NewPrice);
+                }
+                catch (OperationException ex)
+                {
+                    if (operation.CriticalOperation)
+                    {
+                        return new ReservationResult { Success = false, AdditionalInfo = ex.Message };
+                    }
+                    else
+                    {
+                        continue;
+                    }
                 }
             }
+
+            return new ReservationResult { Success = true, AdditionalInfo = "" };
+        }
+
+        private void ProcessIndividualOperation(AReservationOperation operation)
+        {
+
+        }
+
+        private ReservationResult ProcessPriceCheckException(List<AReservationOperation> operations, Reservation reservation, object newPrice)
+        {
+            throw new NotImplementedException();
+        }
+
+        private List<AReservationOperation> RetrieveOperations(Reservation reservation)
+        {
+            return ReservationOpsBuilder.BuildReservationOps(reservation);
         }
         private void LogInitializationException(Exception exception)
         {
             //Some sort of logging to db before throwing the exception further.
-            throw new NotImplementedException();
+            return;
         }
     }
 }

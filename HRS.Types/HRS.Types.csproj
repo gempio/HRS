@@ -48,6 +48,8 @@
     <Compile Include="Enums\OperationEnum.cs" />
     <Compile Include="Enums\RoomTypeEnum.cs" />
     <Compile Include="AbstractClasses\AReservationOperation.cs" />
+    <Compile Include="Exceptions\OperationException.cs" />
+    <Compile Include="Exceptions\PriceCheckException.cs" />
     <Compile Include="Models\OperationResult.cs" />
     <Compile Include="Models\ReservationResult.cs" />
     <Compile Include="Models\Room.cs" />
