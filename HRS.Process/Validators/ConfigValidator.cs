@@ -17,14 +17,14 @@ namespace HRS.Process.Validators
         public static void ValidateConfig(Hotel hotel, List<OperationConfig> configItems)
         {
             if (configItems.Any(
-                config => config.OperationId == OperationEnum.SendReservationRequestOperation
-                    && config.CriticalOperation))
+                config => (config.OperationId == OperationEnum.SendReservationRequestOperation
+                    && config.CriticalOperation)))
             {
                 return;
             }
             
             LogInvalidConfig(hotel);
-            throw new OperationException("Invalid configuration. Please contact administration team.");
+            throw new InvalidOperationException("Invalid configuration. Please contact administration team.");
         }
 
         private static void LogInvalidConfig(Hotel hotel)

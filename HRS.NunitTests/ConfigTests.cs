@@ -44,11 +44,11 @@ namespace HRS.NunitTests
         }
 
         [Test]
-        public void ShoutThrowOnMissingRequestSubmit()
+        public void ShouldThrowOnMissingRequestSubmit()
         {
             _reservation.Hotel = _hotels[2];
             List<OperationConfig> config = _configDal.RetrieveConfig(_reservation);
-            Assert.Throws<InvalidOperationException>(() => ConfigValidator.ValidateConfig(_hotels[22], config));
+            Assert.Throws<InvalidOperationException>(() => ConfigValidator.ValidateConfig(_hotels[2], config));
         }
     }
 }
