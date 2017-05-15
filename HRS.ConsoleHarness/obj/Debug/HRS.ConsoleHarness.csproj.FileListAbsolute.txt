@@ -1,0 +1,15 @@
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.ConsoleHarness.exe.config
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.ConsoleHarness.exe
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.ConsoleHarness.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\obj\Debug\HRS.ConsoleHarness.exe
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\obj\Debug\HRS.ConsoleHarness.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.Process.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.Types.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.DataAccessLayer.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.Process.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.Process.dll.config
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.Types.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.Types.dll.config
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.DataAccessLayer.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.DataAccessLayer.dll.config
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\obj\Debug\HRS.ConsoleHarness.csprojResolveAssemblyReference.cache

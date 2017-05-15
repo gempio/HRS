@@ -1,0 +1,15 @@
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.dll.config
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.Types.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.Types.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.Types.dll.config
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\obj\Debug\HRS.csprojResolveAssemblyReference.cache
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\obj\Debug\HRS.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\obj\Debug\HRS.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.Process.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.Process.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.Process.dll.config
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.DataAccessLayer.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.DataAccessLayer.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS\bin\Debug\HRS.DataAccessLayer.dll.config

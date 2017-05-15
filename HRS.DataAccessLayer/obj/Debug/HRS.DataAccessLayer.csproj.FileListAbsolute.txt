@@ -1,0 +1,9 @@
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.DataAccessLayer\obj\Debug\HRS.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.DataAccessLayer\bin\Debug\HRS.DataAccessLayer.dll.config
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.DataAccessLayer\bin\Debug\HRS.DataAccessLayer.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.DataAccessLayer\bin\Debug\HRS.DataAccessLayer.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.DataAccessLayer\bin\Debug\HRS.Types.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.DataAccessLayer\bin\Debug\HRS.Types.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.DataAccessLayer\bin\Debug\HRS.Types.dll.config
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.DataAccessLayer\obj\Debug\HRS.DataAccessLayer.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.DataAccessLayer\obj\Debug\HRS.DataAccessLayer.pdb
