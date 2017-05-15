@@ -13,19 +13,38 @@ namespace HRS.ConsoleHarness
     {
         public static void Main(string[] args)
         {
-            UserAuthentication.AuthenticateUser("user", "password");
-
             List<Hotel> hotelList = GetHotels();
             List<Room> roomList = GetRooms();
-            long 
+
 
             Console.WriteLine("Welcome to HRS Console Harness");
             Console.WriteLine("Athenticating User");
-            
+            UserAuthentication.AuthenticateUser("user", "pass");
+            Console.ReadLine();
             Console.WriteLine("Authentication passed");
 
             Console.WriteLine("Please select a hotel:");
+            foreach(Hotel hotel in hotelList)
+            {
+                Console.WriteLine(string.Format("{0}. {1}", hotel.HotelId, hotel.HotelName));
+            }
+            Hotel chosenHotel = hotelList[int.Parse(Console.ReadLine())];
 
+            Console.WriteLine("Please Select a room:");
+            foreach(Room room in roomList)
+            {
+                Console.WriteLine(
+                    string.Format("{0}. No of Single Beds: " +
+                    "{1}, No of Double Beds {2} " +
+                    "No of Queen Beds {3}", 
+                    room.RoomTypeEnum, 
+                    room.NoOfSingleBeds, 
+                    room.NoOfDoubleBeds, 
+                    room.NoOfQueenBeds
+                    ));
+            }
+            Room chosenRoom = roomList[int.Parse(Console.ReadLine())];
+            
             List<Reservation> reservationList = CreateTestReservations();
         }
 
