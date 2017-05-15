@@ -10,7 +10,7 @@ namespace HRS.Types.Exceptions
     {
         public int NewPrice { get; private set; }
 
-        public PriceCheckException(int newPrice)
+        public PriceCheckException(int newPrice) : base()
         {
             NewPrice = newPrice;
         }
