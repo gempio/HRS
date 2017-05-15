@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
-using System.Linq;
-using System.Security.Authentication;
-using System.Text;
-using System.Threading.Tasks;
-using HRS.Types.Interfaces;
 using HRS.Types.Models;
 using HRS.Process.Factories;
 using HRS.Process.Operations;
-using HRS.DataAccessLayer.OperationDALs;
 using HRS.Types.Exceptions;
+using HRS.Process.AbstractClasses;
 
 namespace HRS
 {
@@ -67,14 +61,11 @@ namespace HRS
             return new ReservationResult { Success = true, AdditionalInfo = "" };
         }
 
-        private void ProcessIndividualOperation(AReservationOperation operation)
+        private ReservationResult ProcessPriceCheckException(List<AReservationOperation> operations, Reservation reservation, int newPrice)
         {
-
-        }
-
-        private ReservationResult ProcessPriceCheckException(List<AReservationOperation> operations, Reservation reservation, object newPrice)
-        {
-            throw new NotImplementedException();
+            Console.Write(string.Format("New Price alert! New price: {0}. Do you agree with the new price?", newPrice));
+            Console.ReadLine();
+            return ProcessOperations(operations, reservation);
         }
 
         private List<AReservationOperation> RetrieveOperations(Reservation reservation)
