@@ -1,16 +1,18 @@
-﻿using System;
+﻿using HRS.Process.AbstractClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HRS.Types.Models;
-using HRS.Process.AbstractClasses;
 
 namespace HRS.Process.Operations
 {
-    public class StoreReservationOperation : AReservationOperation
+    public class ProcessPaymentOperation : AReservationOperation
     {
-        public StoreReservationOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
+        private Reservation reservation;
+
+        public ProcessPaymentOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
         {
         }
 

@@ -8,42 +8,31 @@ using System.Threading.Tasks;
 using HRS.Types.ConfigClasses;
 using HRS.Types.Enums;
 using HRS.Types.Models;
+using HRS.Types.Exceptions;
 
 namespace HRS.Process.Validators
 {
-    internal class ConfigValidator
+    class ConfigValidator
     {
-        static void ValidateConfig(List<OperationConfig> configItems)
+        public static void ValidateConfig(Hotel hotel, List<OperationConfig> configItems)
         {
-            if (configItems.Any(config => config.OperationId == OperationEnum.SendReservationRequestOperation))
+            if (configItems.Any(
+                config => config.OperationId == OperationEnum.SendReservationRequestOperation
+                    && config.CriticalOperation))
             {
                 return;
             }
-
-            //TODO create bespoke exception
-            throw new Exception("Send Request is not present in the config.");
+            
+            LogInvalidConfig(hotel);
+            throw new OperationException("Invalid configuration. Please contact administration team.");
         }
 
-        static void RetrieveConfig(Hotel hotel)
+        private static void LogInvalidConfig(Hotel hotel)
         {
-            //Normally I'd put a Retrieve FromDB method here.
-            List<OperationConfig> retrievedConfig = new List<OperationConfig>();
-            if(hotel.HotelId == 1)
-            {
-                
-            }
-            else if(hotel.HotelId == 2)
-            {
-
-            }
-            else if(hotel.HotelId == 3)
-            {
-
-            }
-            else
-            {
-                
-            }
+            //Normally some connection to db would be made 
+            //here to log which hotel has some sort of configuraion 
+            //issue.
+            return; 
         }
     }
 }

@@ -10,6 +10,10 @@ namespace HRS.Process.Operations
 {
     internal class SendReservationRequestOperation : AReservationOperation
     {
+        public SendReservationRequestOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
+        {
+        }
+
         public override OperationResult ReservationOperation(Reservation reservation)
         {
             throw new NotImplementedException();

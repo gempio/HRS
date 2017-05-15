@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace HRS.Types.Exceptions
 {
-    public class OperationException : Exception
+    public class UnrecognizedHotelException : Exception
     {
-        public OperationException(string message) : base(message)
-        {
-        }
+        public UnrecognizedHotelException(string message) : base(message)
+        {}
     }
 }

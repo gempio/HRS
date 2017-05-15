@@ -9,8 +9,14 @@ namespace HRS.Process.AbstractClasses
 {
     public abstract class AReservationOperation
     {
-        public bool CriticalOperation;
+        public bool CriticalOperation { get; private set; }
+        private Reservation _reservation;
 
+        public AReservationOperation(Reservation reservation, bool criticalOperation)
+        {
+            CriticalOperation = criticalOperation;
+            _reservation = reservation;
+        }
         public abstract OperationResult ReservationOperation(Reservation reservation);
     }
 }

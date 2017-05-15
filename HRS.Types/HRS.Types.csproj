@@ -50,6 +50,7 @@
     <Compile Include="AbstractClasses\AReservationOperation.cs" />
     <Compile Include="Exceptions\OperationException.cs" />
     <Compile Include="Exceptions\PriceCheckException.cs" />
+    <Compile Include="Exceptions\UnrecognizedHotelException.cs" />
     <Compile Include="Models\OperationResult.cs" />
     <Compile Include="Models\ReservationResult.cs" />
     <Compile Include="Models\Room.cs" />

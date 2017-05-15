@@ -10,6 +10,10 @@ namespace HRS.Process.Operations
 {
     class RecheckPriceOperation : AReservationOperation
     {
+        public RecheckPriceOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
+        {
+        }
+
         public override OperationResult ReservationOperation(Reservation reservation)
         {
             throw new NotImplementedException();

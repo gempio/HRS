@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Factories\ReservationOpsBuilder.cs" />
     <Compile Include="Interfaces\IReservationOperation.cs" />
+    <Compile Include="Operations\ProcessPaymentOperation.cs" />
     <Compile Include="Operations\RecheckPriceOperation.cs" />
     <Compile Include="Operations\SendReservationRequestOperation.cs" />
     <Compile Include="Operations\SendSuccessEmailOperation.cs" />
