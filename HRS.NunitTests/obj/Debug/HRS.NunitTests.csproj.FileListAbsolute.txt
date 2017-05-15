@@ -16,3 +16,8 @@ C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.NunitTests
 C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.NunitTests\obj\Debug\HRS.NunitTests.csprojResolveAssemblyReference.cache
 C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.NunitTests\obj\Debug\HRS.NunitTests.dll
 C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.NunitTests\obj\Debug\HRS.NunitTests.pdb
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.NunitTests\bin\Debug\Microsoft.Analytics.UnitTest.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.NunitTests\bin\Debug\nunit.framework.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.NunitTests\bin\Debug\nunit.mocks.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.NunitTests\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.NunitTests\bin\Debug\nunit.framework.xml

@@ -19,3 +19,5 @@ C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHar
 C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.NunitTests.dll
 C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.NunitTests.pdb
 C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\HRS.NunitTests.dll.config
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\nunit.framework.dll
+C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.ConsoleHarness\bin\Debug\nunit.framework.xml

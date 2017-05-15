@@ -12,7 +12,7 @@ using HRS.Types.Exceptions;
 
 namespace HRS.Process.Validators
 {
-    class ConfigValidator
+    public class ConfigValidator
     {
         public static void ValidateConfig(Hotel hotel, List<OperationConfig> configItems)
         {
