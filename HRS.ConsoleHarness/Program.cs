@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace HRS.ConsoleHarness
@@ -44,21 +45,49 @@ namespace HRS.ConsoleHarness
                     ));
             }
             Room chosenRoom = roomList[int.Parse(Console.ReadLine())];
-            
-            List<Reservation> reservationList = CreateTestReservations();
+
+            Console.WriteLine("Please type in reservation date in dd/mm/yyyy");
+
+            DateTime chosenDate = DateTime.Parse(Console.ReadLine());
+
+            Console.WriteLine("Please type in no of nights to stay:");
+
+            int NightsToStay = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Please enter amount of adults: ");
+
+            int NoOfReservees = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("The price for the room is {0}", GetReservationPrice(chosenHotel,chosenRoom,NightsToStay,NoOfReservees));
+            Console.WriteLine("Do you accept this reservation?");
+
+            Console.ReadLine();
+
+            Console.Write("Please type in your card number: ");
+            string cardnumber = Console.ReadLine();
+            Console.WriteLine(string.Format("Card number used: {0}", cardnumber));
+
+            Console.Write("Please type in your email address: ");
+            string emailAddress = Console.ReadLine();
+            Console.WriteLine("Email Address User: {0}", emailAddress);
+
+            Console.Write("Processing reservation");
+            Thread.Sleep(1000);
+            Console.Write(".");
+            Thread.Sleep(1000);
+            Console.Write(".");
+            Thread.Sleep(1000);
+            Console.Write(".");
+            Thread.Sleep(1000); 
+            Console.WriteLine("Payment Confirmed");
+            Thread.Sleep(1000);
+            Console.WriteLine("Reservation confirmed");
+            Thread.Sleep(1000);
+            Console.WriteLine("Email successfully sent");
+
+            Console.ReadLine();
         }
-
-        private static List<Reservation> CreateTestReservations()
-        {
-            var reservationList = new List<Reservation>();
-            List<Hotel> hotelList = GetHotels();
-            List<Room> roomPossibilities = GetRooms();
-
-
-
-            return reservationList;
-        }
-
+        
         private static List<Hotel> GetHotels()
         {
             var hotelList = new List<Hotel>();
@@ -94,6 +123,11 @@ namespace HRS.ConsoleHarness
                 });
 
             return roomList;
+        }
+
+        private static double GetReservationPrice(Hotel hotel, Room room, int NightsToStay, int NoOfReservees)
+        {
+            return (double) (50*((int) room.RoomTypeEnum)*NightsToStay*NoOfReservees*hotel.HotelId)*0.7;
         }
     }
 }

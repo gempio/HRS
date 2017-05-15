@@ -8,8 +8,8 @@ namespace HRS.Types.Models
         public Hotel Hotel { get; set; }
         public List<Room> Rooms { get; set; }
         public DateTime DateOfReservation { get; set; }
-        public long NoOfReservees { get; set; }
-        public long NightsToStay { get; set; }
+        public int NoOfReservees { get; set; }
+        public int NightsToStay { get; set; }
         public double price { get; set; }
     }
 }
