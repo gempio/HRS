@@ -9,6 +9,7 @@ using HRS.Types.Interfaces;
 using HRS.Types.Models;
 using HRS.Process.Factories;
 using HRS.Process.Operations;
+using HRS.DataAccessLayer.OperationDALs;
 
 namespace HRS
 {
@@ -30,7 +31,18 @@ namespace HRS
 
         public ReservationResult MakeReservation(Reservation reservation)
         {
-            return null;
+            List<AReservationOperation> operations = ReservationOpsBuilder.BuildReservationOps(reservation);
+            foreach(AReservationOperation operation in operations)
+            {
+                try
+                {
+
+                }
+                catch(OperationException ex)
+                {
+                    if(operation.)
+                }
+            }
         }
         private void LogInitializationException(Exception exception)
         {

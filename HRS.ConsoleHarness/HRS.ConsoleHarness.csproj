@@ -59,6 +59,10 @@
       <Project>{4BF2048C-6F46-48C5-9658-B71C83E1F315}</Project>
       <Name>HRS.Types</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HRS\HRS.csproj">
+      <Project>{d6500943-5706-441b-a7e0-4290de46996e}</Project>
+      <Name>HRS</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

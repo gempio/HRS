@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using HRS.Types.Models;
 
-namespace HRS.Process.Interfaces
+namespace HRS.Process.AbstractClasses
 {
-    public interface IReservationOperation
+    public abstract class AReservationOperation
     {
-        OperationResult ReservationOperation(Reservation reservation);
+        public bool CriticalOperation;
+
+        public abstract OperationResult ReservationOperation(Reservation reservation);
     }
 }

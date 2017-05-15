@@ -12,7 +12,7 @@ namespace HRS.DataAccessLayer.OperationDALs
 {
     public class ConfigDAL
     {
-        public static List<OperationConfig> RetrieveConfig(Hotel hotel)
+        public static List<OperationConfig> RetrieveConfig(Reservation reservation)
         {
             return null;
         }

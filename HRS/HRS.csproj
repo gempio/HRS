@@ -51,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HRS.DataAccessLayer\HRS.DataAccessLayer.csproj">
+      <Project>{4FBA1C73-48D2-46D3-89EA-10D0864C6674}</Project>
+      <Name>HRS.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HRS.Process\HRS.Process.csproj">
       <Project>{F9B3F0D0-F775-42F5-938E-46FB4A4B7576}</Project>
       <Name>HRS.Process</Name>

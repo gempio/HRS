@@ -47,7 +47,7 @@
     <Compile Include="ConfigClasses\OperationConfig.cs" />
     <Compile Include="Enums\OperationEnum.cs" />
     <Compile Include="Enums\RoomTypeEnum.cs" />
-    <Compile Include="Interfaces\IReservationOperation.cs" />
+    <Compile Include="AbstractClasses\AReservationOperation.cs" />
     <Compile Include="Models\OperationResult.cs" />
     <Compile Include="Models\ReservationResult.cs" />
     <Compile Include="Models\Room.cs" />

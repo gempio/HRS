@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HRS.Types.Interfaces;
 using HRS.Types.Models;
+using HRS.Process.AbstractClasses;
 
 namespace HRS.Process.Operations
 {
-    internal class SendReservationRequestOperation : IReservationOperation
+    internal class SendReservationRequestOperation : AReservationOperation
     {
-        public OperationResult ReservationOperation(Reservation reservation)
+        public override OperationResult ReservationOperation(Reservation reservation)
         {
             throw new NotImplementedException();
         }

@@ -8,9 +8,9 @@ using HRS.Types.Models;
 
 namespace HRS.Process.Operations
 {
-    class StoreReservationOperation : IReservationOperation
+    class StoreReservationOperation : AReservationOperation
     {
-        public OperationResult ReservationOperation(Reservation reservation)
+        public override OperationResult ReservationOperation(Reservation reservation)
         {
             throw new NotImplementedException();
         }

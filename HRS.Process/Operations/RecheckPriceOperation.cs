@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HRS.Types.Interfaces;
 using HRS.Types.Models;
+using HRS.Process.AbstractClasses;
 
 namespace HRS.Process.Operations
 {
-    class RecheckPriceOperation : IReservationOperation
+    class RecheckPriceOperation : AReservationOperation
     {
-        public OperationResult ReservationOperation(Reservation reservation)
+        public override OperationResult ReservationOperation(Reservation reservation)
         {
             throw new NotImplementedException();
         }

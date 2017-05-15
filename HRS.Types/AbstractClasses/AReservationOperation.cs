@@ -7,8 +7,10 @@ using HRS.Types.Models;
 
 namespace HRS.Types.Interfaces
 {
-    public interface IReservationOperation
+    public abstract class AReservationOperation
     {
-        OperationResult ReservationOperation(Reservation reservation);
+        public bool CriticalOperation { get; set; }
+
+        public abstract OperationResult ReservationOperation(Reservation reservation);
     }
 }
