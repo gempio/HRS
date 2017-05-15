@@ -1,4 +1,6 @@
-﻿using HRS.Process.Operations;
+﻿using HRS.NunitTests.TestData;
+using HRS.NunitTests.TestDataClasses;
+using HRS.Process.Operations;
 using HRS.Types.Enums;
 using HRS.Types.Models;
 using System;
@@ -14,8 +16,8 @@ namespace HRS.ConsoleHarness
     {
         public static void Main(string[] args)
         {
-            List<Hotel> hotelList = GetHotels();
-            List<Room> roomList = GetRooms();
+            List<Hotel> hotelList = TestHotelsData.GetTestHotels();
+            List<Room> roomList = TestRoomsData.GetTestRooms();
             Reservation reservation = new Reservation();
 
             Console.WriteLine("Welcome to HRS Console Harness");
@@ -72,7 +74,7 @@ namespace HRS.ConsoleHarness
             reservation.EmailAddress = Console.ReadLine();
             Console.WriteLine("Email Address User: {0}", reservation.EmailAddress);
 
-            reservation.ReservationId = GenerateReservationId();
+            reservation.ReservationId = TestUtility.GenerateReservationId();
             Console.Write("Processing reservation: {0}", reservation.ReservationId);
 
             HotelReservationModule hrm = new HotelReservationModule("user", "pass");
@@ -81,51 +83,6 @@ namespace HRS.ConsoleHarness
             Console.WriteLine("Process Completed");
 
             Console.ReadLine();
-        }
-
-        private static string GenerateReservationId()
-        {
-            Random random = new Random();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, 8)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
-        private static List<Hotel> GetHotels()
-        {
-            var hotelList = new List<Hotel>();
-            hotelList.Add(new Hotel { HotelId = 1, HotelName = "Hotel1" });
-            hotelList.Add(new Hotel { HotelId = 2, HotelName = "Hotel2" });
-            hotelList.Add(new Hotel { HotelId = 3, HotelName = "Hotel3" });
-            return hotelList;
-        }
-
-        private static List<Room> GetRooms()
-        {
-            var roomList = new List<Room>();
-
-            roomList.Add(
-                new Room
-                {
-                    NoOfSingleBeds = 1,
-                    RoomTypeEnum = RoomTypeEnum.Single
-                });
-
-            roomList.Add(
-                new Room
-                {
-                    NoOfSingleBeds = 2,
-                    RoomTypeEnum = RoomTypeEnum.Double
-                });
-
-            roomList.Add(
-                new Room
-                {
-                    NoOfQueenBeds = 1,
-                    RoomTypeEnum = RoomTypeEnum.Deluxe
-                });
-
-            return roomList;
         }
 
         private static double GetReservationPrice(Reservation reservation)

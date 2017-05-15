@@ -51,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HRS.NunitTests\HRS.NunitTests.csproj">
+      <Project>{703ee676-ea90-4ac6-afb5-8b5fed820e76}</Project>
+      <Name>HRS.NunitTests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HRS.Process\HRS.Process.csproj">
       <Project>{F9B3F0D0-F775-42F5-938E-46FB4A4B7576}</Project>
       <Name>HRS.Process</Name>

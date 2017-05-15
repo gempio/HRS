@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRS", "HRS\HRS.csproj", "{D6500943-5706-441B-A7E0-4290DE46996E}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRS.DataAccessLayer", "HRS.DataAccessLayer\HRS.DataAccessLayer.csproj", "{4FBA1C73-48D2-46D3-89EA-10D0864C6674}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRS.Process", "HRS.Process\HRS.Process.csproj", "{F9B3F0D0-F775-42F5-938E-46FB4A4B7576}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRS.NunitTests", "HRS.NunitTests\HRS.NunitTests.csproj", "{703EE676-EA90-4AC6-AFB5-8B5FED820E76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F9B3F0D0-F775-42F5-938E-46FB4A4B7576}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9B3F0D0-F775-42F5-938E-46FB4A4B7576}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9B3F0D0-F775-42F5-938E-46FB4A4B7576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{703EE676-EA90-4AC6-AFB5-8B5FED820E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703EE676-EA90-4AC6-AFB5-8B5FED820E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703EE676-EA90-4AC6-AFB5-8B5FED820E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703EE676-EA90-4AC6-AFB5-8B5FED820E76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
