@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HRS.Types.AbstractClasses;
 using HRS.Types.Models;
-using HRS.Types.AbstractClasses;
 
 namespace HRS.Process.ReservationOperations
 {
@@ -16,7 +11,7 @@ namespace HRS.Process.ReservationOperations
 
         public override OperationResult ReservationOperation(Reservation reservation)
         {
-            return new OperationResult(true, string.Empty); 
+            return new OperationResult(true, string.Empty);
         }
     }
 }

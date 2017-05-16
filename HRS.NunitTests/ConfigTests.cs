@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using HRS.NunitTests.TestData;
-using HRS.Types.Models;
 using HRS.DataAccessLayer.OperationDALs;
-using HRS.Types.ConfigClasses;
+using HRS.NunitTests.TestDataClasses;
 using HRS.Process.Validators;
+using HRS.Types.ConfigClasses;
+using HRS.Types.Models;
+using NUnit.Framework;
 
 namespace HRS.NunitTests
 {
@@ -32,7 +29,7 @@ namespace HRS.NunitTests
         {
             _reservation.Hotel = _hotels[0];
             List<OperationConfig> config = _configDal.RetrieveConfig(_reservation);
-            Assert.DoesNotThrow(() =>ConfigValidator.ValidateConfig(_hotels[0], config));
+            Assert.DoesNotThrow(() => ConfigValidator.ValidateConfig(_hotels[0], config));
         }
 
         [Test]

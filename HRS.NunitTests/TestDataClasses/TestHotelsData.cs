@@ -1,20 +1,18 @@
-﻿using HRS.Types.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using HRS.Types.Models;
 
-namespace HRS.NunitTests.TestData
+namespace HRS.NunitTests.TestDataClasses
 {
-    public class TestHotelsData
+    public static class TestHotelsData
     {
         public static List<Hotel> GetTestHotels()
         {
-            var hotelList = new List<Hotel>();
-            hotelList.Add(new Hotel { HotelId = 1, HotelName = "TestHotel1" });
-            hotelList.Add(new Hotel { HotelId = 2, HotelName = "TestHotel2" });
-            hotelList.Add(new Hotel { HotelId = 3, HotelName = "TestHotel3" });
+            var hotelList = new List<Hotel>
+            {
+                new Hotel {HotelId = 1, HotelName = "TestHotel1"},
+                new Hotel {HotelId = 2, HotelName = "TestHotel2"},
+                new Hotel {HotelId = 3, HotelName = "TestHotel3"}
+            };
             return hotelList;
         }
     }

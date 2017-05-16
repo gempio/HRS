@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using HRS.Types.Models;
+﻿using System.Text.RegularExpressions;
 using HRS.Types.AbstractClasses;
+using HRS.Types.Exceptions;
+using HRS.Types.Models;
 
 namespace HRS.Process.ReservationOperations
 {
-    using HRS.Types.Exceptions;
-
     public class ProcessPaymentOperation : AReservationOperation
     {
         private Reservation reservation;
@@ -25,15 +19,19 @@ namespace HRS.Process.ReservationOperations
             {
                 throw new OperationException("Payment Failed. Invalid Price.");
             }
-            if (string.IsNullOrEmpty(reservation.CardNumber)) 
+
+            if (string.IsNullOrEmpty(reservation.CardNumber))
             {
                 throw new OperationException("Payment failed. Missing Card Number.");
             }
+
             // For the purpose of the exercise allow for a test card number here.
-            if (!Regex.Match(reservation.CardNumber, @"\d\d\d\d \d\d\d\d \d\d\d\d \d\d\d\d").Success && reservation.CardNumber != "test")
+            if (!Regex.Match(reservation.CardNumber, @"\d\d\d\d \d\d\d\d \d\d\d\d \d\d\d\d").Success &&
+                reservation.CardNumber != "test")
             {
-               throw new OperationException("Payment failed. Invalid Card Number"); 
+                throw new OperationException("Payment failed. Invalid Card Number");
             }
+
             return new OperationResult(true, "Payment successful.");
         }
     }

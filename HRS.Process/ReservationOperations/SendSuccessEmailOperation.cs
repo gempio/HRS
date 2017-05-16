@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HRS.Types.Models;
 using HRS.Types.AbstractClasses;
+using HRS.Types.Models;
 
 namespace HRS.Process.ReservationOperations
 {
     using System.Text.RegularExpressions;
-
     using HRS.Types.Exceptions;
 
     public class SendSuccessEmailOperation : AReservationOperation
     {
-        public SendSuccessEmailOperation( bool criticalOperation) : base(criticalOperation)
+        public SendSuccessEmailOperation(bool criticalOperation) : base(criticalOperation)
         {
         }
 

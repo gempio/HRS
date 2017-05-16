@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HRS.Types.AbstractClasses;
+using HRS.Types.Exceptions;
 using HRS.Types.Models;
-using HRS.Types.AbstractClasses;
 
 namespace HRS.Process.ReservationOperations
 {
-    using System.CodeDom;
-
-    using HRS.Types.Exceptions;
 
     public class SendReservationRequestOperation : AReservationOperation
     {

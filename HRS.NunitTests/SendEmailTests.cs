@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using HRS.Process.ReservationOperations;
+using HRS.Types.AbstractClasses;
+using HRS.Types.Exceptions;
+using HRS.Types.Models;
 
 namespace HRS.NunitTests
 {
-    using HRS.Process.ReservationOperations;
-    using HRS.Types.AbstractClasses;
-    using HRS.Types.Exceptions;
-    using HRS.Types.Models;
-
     [TestFixture]
     public class SendEmailTests
     {
@@ -22,8 +16,8 @@ namespace HRS.NunitTests
         [SetUp]
         public void SetUp()
         {
-            _reservation = new Reservation{EmailAddress = "test@somewhere.com"};
-            
+            _reservation = new Reservation {EmailAddress = "test@somewhere.com"};
+
             _sendEmailOperation = new SendSuccessEmailOperation(false);
         }
 

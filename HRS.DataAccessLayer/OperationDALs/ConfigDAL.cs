@@ -1,10 +1,4 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Authentication;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using HRS.Types.ConfigClasses;
 using HRS.Types.Models;
 using HRS.Types.Exceptions;
