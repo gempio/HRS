@@ -44,10 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractClasses\AValidationOperation.cs" />
     <Compile Include="ConfigClasses\OperationConfig.cs" />
     <Compile Include="Enums\OperationEnum.cs" />
+    <Compile Include="Enums\ReturnTypeEnum.cs" />
     <Compile Include="Enums\RoomTypeEnum.cs" />
     <Compile Include="AbstractClasses\AReservationOperation.cs" />
+    <Compile Include="Exceptions\InvalidConfigException.cs" />
     <Compile Include="Exceptions\OperationException.cs" />
     <Compile Include="Exceptions\PriceCheckException.cs" />
     <Compile Include="Exceptions\UnrecognizedHotelException.cs" />

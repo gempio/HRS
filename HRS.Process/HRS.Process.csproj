@@ -45,13 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factories\ReservationOpsBuilder.cs" />
-    <Compile Include="Interfaces\IReservationOperation.cs" />
-    <Compile Include="Operations\ProcessPaymentOperation.cs" />
-    <Compile Include="Operations\RecheckPriceOperation.cs" />
-    <Compile Include="Operations\SendReservationRequestOperation.cs" />
-    <Compile Include="Operations\SendSuccessEmailOperation.cs" />
-    <Compile Include="Operations\StoreReservationOperation.cs" />
-    <Compile Include="Operations\UserAuthentication.cs" />
+    <Compile Include="InputValidator.cs" />
+    <Compile Include="ReservationOperations\ProcessPaymentOperation.cs" />
+    <Compile Include="ReservationOperations\RecheckPriceOperation.cs" />
+    <Compile Include="ReservationOperations\SendReservationRequestOperation.cs" />
+    <Compile Include="ReservationOperations\SendSuccessEmailOperation.cs" />
+    <Compile Include="ReservationOperations\StoreReservationOperation.cs" />
+    <Compile Include="ReservationOperations\UserAuthentication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validators\ConfigValidator.cs" />
   </ItemGroup>

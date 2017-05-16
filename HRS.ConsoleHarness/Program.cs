@@ -21,19 +21,16 @@ namespace HRS.ConsoleHarness
             Reservation reservation = new Reservation();
 
             Console.WriteLine("Welcome to HRS Console Harness");
-            Console.WriteLine("Athenticating User");
-            UserAuthentication.AuthenticateUser("user", "pass");
-            Console.ReadLine();
-            Console.WriteLine("Authentication passed");
 
-            Console.WriteLine("Please select a hotel:");
+            
             foreach(Hotel hotel in hotelList)
             {
                 Console.WriteLine(string.Format("{0}. {1}", hotel.HotelId, hotel.HotelName));
             }
-            reservation.Hotel = hotelList[int.Parse(Console.ReadLine())];
+            int chosenHotel = GetUserInput<int>("Please select a hotel:",ReturnTypeEnum.Int);
+            reservation.Hotel = hotelList[chosenHotel-1];
 
-            Console.WriteLine("Please Select a room:");
+            
             foreach(Room room in roomList)
             {
                 Console.WriteLine(
@@ -46,32 +43,24 @@ namespace HRS.ConsoleHarness
                     room.NoOfQueenBeds
                     ));
             }
-            reservation.Rooms = new List<Room>();
-            reservation.Rooms.Add(roomList[int.Parse(Console.ReadLine())]);
+            int chosenRoom = GetUserInput<int>("Please Select a room:", ReturnTypeEnum.Int);
+            reservation.Rooms = new List<Room> { roomList[chosenRoom-1] };
 
-            Console.WriteLine("Please type in reservation date in dd/mm/yyyy");
+            reservation.DateOfReservation = GetUserInput<DateTime>("Please type in reservation date in dd/mm/yyyy", ReturnTypeEnum.DateTime);
 
-            reservation.DateOfReservation = DateTime.Parse(Console.ReadLine());
+            reservation.NightsToStay = GetUserInput<int>("Please type in no. of nights to stay:", ReturnTypeEnum.Int);
 
-            Console.WriteLine("Please type in no of nights to stay:");
-
-            reservation.NightsToStay = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Please enter amount of adults: ");
-
-            reservation.NoOfReservees = int.Parse(Console.ReadLine());
+            reservation.NoOfReservees = GetUserInput<int>("Please enter amount of adults: ", ReturnTypeEnum.Int);
 
             Console.WriteLine("The price for the room is {0}", GetReservationPrice(reservation));
             Console.WriteLine("Do you accept this reservation?");
 
             Console.ReadLine();
 
-            Console.Write("Please type in your card number: ");
-            reservation.CardNumber = Console.ReadLine();
+            reservation.CardNumber = GetUserInput<string>("Please type in your card number: ", ReturnTypeEnum.String); 
             Console.WriteLine(string.Format("Card number used: {0}", reservation.CardNumber));
 
-            Console.Write("Please type in your email address: ");
-            reservation.EmailAddress = Console.ReadLine();
+            reservation.EmailAddress = GetUserInput<string>("Please type in your email address: ", ReturnTypeEnum.String); 
             Console.WriteLine("Email Address User: {0}", reservation.EmailAddress);
 
             reservation.ReservationId = TestUtility.GenerateReservationId();
@@ -88,6 +77,33 @@ namespace HRS.ConsoleHarness
         private static double GetReservationPrice(Reservation reservation)
         {
             return (double) (50*((int) reservation.Rooms[0].RoomTypeEnum)*reservation.NightsToStay*reservation.NoOfReservees*reservation.Hotel.HotelId)*0.7;
+        }
+
+        private static T GetUserInput<T>(string message, ReturnTypeEnum returnType)
+        {
+            try
+            {
+                Console.Write(message);
+                string input = Console.ReadLine();
+                return (T) ReturnObjectType(input, returnType);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid input. Please try again.");
+                return (T) GetUserInput<T>(message, returnType);
+            }
+        }
+
+        private static object ReturnObjectType(string input, ReturnTypeEnum returnType)
+        {
+            switch (returnType)
+            {
+                case ReturnTypeEnum.String: return input;
+                case ReturnTypeEnum.Int: return int.Parse(input);
+                case ReturnTypeEnum.Double: return double.Parse(input);
+                case ReturnTypeEnum.DateTime: return DateTime.Parse(input);
+                default: return null;
+            }
         }
     }
 }

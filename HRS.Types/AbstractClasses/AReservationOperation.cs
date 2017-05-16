@@ -5,12 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using HRS.Types.Models;
 
-namespace HRS.Types.Interfaces
+namespace HRS.Types.AbstractClasses
 {
     public abstract class AReservationOperation
     {
-        public bool CriticalOperation { get; set; }
+        public bool CriticalOperation { get; private set; }
+        private Reservation _reservation;
 
+        public AReservationOperation(Reservation reservation, bool criticalOperation)
+        {
+            CriticalOperation = criticalOperation;
+            _reservation = reservation;
+        }
         public abstract OperationResult ReservationOperation(Reservation reservation);
     }
 }

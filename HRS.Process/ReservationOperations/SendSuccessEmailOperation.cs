@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HRS.Types.Models;
-using HRS.Process.AbstractClasses;
+using HRS.Types.AbstractClasses;
 
-namespace HRS.Process.Operations
+namespace HRS.Process.ReservationOperations
 {
-    public class StoreReservationOperation : AReservationOperation
+    class SendSuccessEmailOperation : AReservationOperation
     {
-        public StoreReservationOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
+        public SendSuccessEmailOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
         {
         }
 

@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using HRS.Types.ConfigClasses;
 using HRS.Types.Models;
 using HRS.DataAccessLayer.OperationDALs;
 using HRS.Process.Validators;
 using HRS.Types.Enums;
-using HRS.Process.Operations;
-using HRS.Process.AbstractClasses;
+using HRS.Types.AbstractClasses;
+using HRS.Process.ReservationOperations;
+using HRS.Types.Exceptions;
 
 namespace HRS.Process.Factories
 {
@@ -21,7 +18,7 @@ namespace HRS.Process.Factories
 
             ConfigValidator.ValidateConfig(reservation.Hotel, hotelConfig);
 
-            var hotelOperations = ExtractOperations(reservation, hotelConfig);
+            var hotelOperations = ExtractOperationsFromConfig(reservation, hotelConfig);
 
             return hotelOperations;
         }
@@ -32,7 +29,7 @@ namespace HRS.Process.Factories
             return configDal.RetrieveConfig(reservation);
         }
 
-        private static List<AReservationOperation> ExtractOperations(Reservation reservation, List<OperationConfig> hotelConfig)
+        private static List<AReservationOperation> ExtractOperationsFromConfig(Reservation reservation, List<OperationConfig> hotelConfig)
         {
             var operations = new List<AReservationOperation>();
             
@@ -59,7 +56,7 @@ namespace HRS.Process.Factories
                 case OperationEnum.StoreReservationOperation:
                     return new StoreReservationOperation(reservation, config.CriticalOperation);
                 default:
-                    throw new InvalidOperationException(string.Format("Invalid configuration value for operationId:{0}", config.OperationId));
+                    throw new InvalidConfigException(string.Format("Invalid configuration value for operationId:{0}", config.OperationId));
             }
         }
     }

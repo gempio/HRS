@@ -4,11 +4,11 @@ using HRS.Types.Models;
 using HRS.Process.Factories;
 using HRS.Process.Operations;
 using HRS.Types.Exceptions;
-using HRS.Process.AbstractClasses;
+using HRS.Types.AbstractClasses;
 
 namespace HRS
 {
-    //TODO In the future might be good to implement an interface for multiple module accesses.
+    //TODO: In the future might be good to implement an interface for multiple module accesses.
     public class HotelReservationModule
     {
         public HotelReservationModule(string username, string password)
