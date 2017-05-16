@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HRS.Types.Exceptions;
 using NUnit.Framework;
 namespace HRS.NunitTests
 {
@@ -13,36 +14,43 @@ namespace HRS.NunitTests
     [TestFixture]
     public class PaymentOperationChecks
     {
-        private Reservation reservation;
+        private Reservation _reservation;
 
-        private AReservationOperation operation;
+        private AReservationOperation _operation;
 
         [SetUp]
         public void SetUp()
         {
-           reservation = new Reservation{Price=100}; 
-           operation = new ProcessPaymentOperation(false);
+           _reservation = new Reservation{CardNumber = "test", Price=100}; 
+           _operation = new ProcessPaymentOperation(false);
         }
 
         [Test]
         public void ShouldProcessPayment()
         {
-            OperationResult result = operation.ReservationOperation(reservation);
+            OperationResult result = _operation.ReservationOperation(_reservation);
             Assert.True(result.OperationSuccess);
         }
 
         [Test]
         public void FailNegativePrice()
         {
-            reservation.Price = -10000000.00;
-            Assert.Throws<InvalidOperationException>(() => operation.ReservationOperation(reservation));
+            _reservation.Price = -10000000.00;
+            Assert.Throws<OperationException>(() => _operation.ReservationOperation(_reservation));
+        }
+
+        [Test]
+        public void FailOnMissingCardNumber()
+        {
+            _reservation.CardNumber = null;
+            Assert.Throws<OperationException>(() => _operation.ReservationOperation(_reservation));
         }
 
         [Test]
         public void FailZeroPrice()
         {
-            reservation.Price = 0;
-            Assert.Throws<InvalidOperationException>(() => operation.ReservationOperation(reservation));
+            _reservation.Price = 0;
+            Assert.Throws<OperationException>(() => _operation.ReservationOperation(_reservation));
         }
     }
 }

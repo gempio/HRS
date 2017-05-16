@@ -10,7 +10,7 @@ namespace HRS.Process.ReservationOperations
 {
     using HRS.Types.Exceptions;
 
-    class RecheckPriceOperation : AReservationOperation
+    public class RecheckPriceOperation : AReservationOperation
     {
         public RecheckPriceOperation(bool criticalOperation) : base(criticalOperation)
         {

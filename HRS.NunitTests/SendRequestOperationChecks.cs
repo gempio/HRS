@@ -24,14 +24,14 @@ namespace HRS.NunitTests
         [SetUp]
         public void SetUp()
         {
-            this._operation = new SendReservationRequestOperation(true);
-            this._reservation = new Reservation { Hotel = new Hotel { HotelId = 1 } };
+            _operation = new SendReservationRequestOperation(true);
+            _reservation = new Reservation { Hotel = new Hotel { HotelId = 1 } };
         }
 
         [Test]
         public void ShouldSendToSupportedHotel()
         {
-            OperationResult result = this._operation.ReservationOperation(this._reservation);
+            OperationResult result = _operation.ReservationOperation(_reservation);
             Assert.True(result.OperationSuccess);
         }
         
@@ -39,7 +39,7 @@ namespace HRS.NunitTests
         public void ShouldSendToUnsupportedHotel()
         {
             this._reservation.Hotel.HotelId = 9;
-            Assert.Throws<OperationException>(() => this._operation.ReservationOperation(this._reservation));
+            Assert.Throws<OperationException>(() => _operation.ReservationOperation(_reservation));
         }
     }
 }

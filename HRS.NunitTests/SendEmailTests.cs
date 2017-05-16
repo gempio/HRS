@@ -22,7 +22,7 @@ namespace HRS.NunitTests
         [SetUp]
         public void SetUp()
         {
-            _reservation = new Reservation{EmailAddress = "Email Address"};
+            _reservation = new Reservation{EmailAddress = "test@somewhere.com"};
             
             _sendEmailOperation = new SendSuccessEmailOperation(false);
         }

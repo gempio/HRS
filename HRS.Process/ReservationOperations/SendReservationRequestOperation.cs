@@ -20,7 +20,7 @@ namespace HRS.Process.ReservationOperations
 
         public override OperationResult ReservationOperation(Reservation reservation)
         {
-            if (reservation.Hotel.HotelId > 3 && reservation.Hotel.HotelId < 0)
+            if (reservation.Hotel.HotelId > 0 && reservation.Hotel.HotelId < 3)
             {
                 return new OperationResult(true, "Reservation succeeded.");
             }
