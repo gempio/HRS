@@ -16,7 +16,9 @@ namespace HRS.Process.ReservationOperations
 
         public override OperationResult ReservationOperation(Reservation reservation)
         {
-            throw new NotImplementedException();
+            return reservation.NoOfReservees > 100 ? 
+                new OperationResult(false, "Too many people. Reservation Denied.") : 
+                new OperationResult(true, "Reservation success.");
         }
     }
 }

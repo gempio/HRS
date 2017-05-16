@@ -39,7 +39,12 @@ namespace HRS
                 {
                     //Since we know which operations are not essential there
                     //might be some atomic method cherries that could be ran assynchrously.
-                    operation.ReservationOperation(reservation);
+                    OperationResult result = operation.ReservationOperation(reservation);
+
+                    if (result.AdditionalInfo != string.Empty)
+                    {
+                        Console.WriteLine(result.AdditionalInfo);
+                    }
                 }
                 catch (PriceCheckException exn)
                 {
@@ -58,12 +63,13 @@ namespace HRS
                 }
             }
 
+            Console.WriteLine("Reservation Succesfull.");
             return new ReservationResult { Success = true, AdditionalInfo = "" };
         }
 
         private ReservationResult ProcessPriceCheckException(List<AReservationOperation> operations, Reservation reservation, int newPrice)
         {
-            Console.Write(string.Format("New Price alert! New price: {0}. Do you agree with the new price?", newPrice));
+            Console.Write("New Price alert! New price: {0}. Do you agree with the new price?", newPrice);
             Console.ReadLine();
             return ProcessOperations(operations, reservation);
         }

@@ -8,7 +8,9 @@ using HRS.Types.AbstractClasses;
 
 namespace HRS.Process.ReservationOperations
 {
-    class SendSuccessEmailOperation : AReservationOperation
+    using System.Text.RegularExpressions;
+
+    public class SendSuccessEmailOperation : AReservationOperation
     {
         public SendSuccessEmailOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
         {
@@ -16,7 +18,13 @@ namespace HRS.Process.ReservationOperations
 
         public override OperationResult ReservationOperation(Reservation reservation)
         {
-            throw new NotImplementedException();
+            var validator = new InputValidator();
+            if (validator.ValidateEmail(reservation.EmailAddress))
+            {
+                return new OperationResult(true, "Email Successfully sent.");
+            }
+
+            return new OperationResult(false, "Failed to send email. Invalid email address.");
         }
     }
 }

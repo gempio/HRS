@@ -16,7 +16,7 @@ namespace HRS.Process.ReservationOperations
 
         public override OperationResult ReservationOperation(Reservation reservation)
         {
-            throw new NotImplementedException();
+            return new OperationResult(true, string.Empty); 
         }
     }
 }

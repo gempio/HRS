@@ -18,7 +18,11 @@ namespace HRS.Process.ReservationOperations
 
         public override OperationResult ReservationOperation(Reservation reservation)
         {
-            throw new NotImplementedException();
+            if (reservation.Price < 1)
+            {
+                throw new InvalidOperationException("Payment Failed. Invalid Price.");
+            }
+            return new OperationResult(true, "Payment successful.");
         }
     }
 }
