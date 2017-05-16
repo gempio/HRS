@@ -1,6 +1,0 @@
-C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.Types\bin\Debug\HRS.Types.dll.config
-C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.Types\bin\Debug\HRS.Types.dll
-C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.Types\bin\Debug\HRS.Types.pdb
-C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.Types\obj\Debug\HRS.Types.dll
-C:\Users\mmusi\OneDrive\Documents\Visual Studio 2017\Projects\HRS\HRS.Types\obj\Debug\HRS.Types.pdb
-C:\Users\mmusi\OneDrive\documents\visual studio 2017\Projects\HRS\HRS.Types\obj\Debug\HRS.Types.csprojResolveAssemblyReference.cache
