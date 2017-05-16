@@ -10,7 +10,7 @@ namespace HRS.Process.ReservationOperations
 {
     public class StoreReservationOperation : AReservationOperation
     {
-        public StoreReservationOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
+        public StoreReservationOperation(bool criticalOperation) : base(criticalOperation)
         {
         }
 

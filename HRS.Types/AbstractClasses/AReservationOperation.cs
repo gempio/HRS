@@ -10,12 +10,10 @@ namespace HRS.Types.AbstractClasses
     public abstract class AReservationOperation
     {
         public bool CriticalOperation { get; private set; }
-        private Reservation _reservation;
 
-        public AReservationOperation(Reservation reservation, bool criticalOperation)
+        public AReservationOperation(bool criticalOperation)
         {
             CriticalOperation = criticalOperation;
-            _reservation = reservation;
         }
         public abstract OperationResult ReservationOperation(Reservation reservation);
     }

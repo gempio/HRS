@@ -10,9 +10,11 @@ namespace HRS.Process.ReservationOperations
 {
     using System.Text.RegularExpressions;
 
+    using HRS.Types.Exceptions;
+
     public class SendSuccessEmailOperation : AReservationOperation
     {
-        public SendSuccessEmailOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
+        public SendSuccessEmailOperation( bool criticalOperation) : base(criticalOperation)
         {
         }
 
@@ -24,7 +26,7 @@ namespace HRS.Process.ReservationOperations
                 return new OperationResult(true, "Email Successfully sent.");
             }
 
-            return new OperationResult(false, "Failed to send email. Invalid email address.");
+            throw new OperationException("Failed to send email. Invalid email address.");
         }
     }
 }

@@ -21,7 +21,7 @@ namespace HRS.NunitTests
         public void SetUp()
         {
            reservation = new Reservation{Price=100}; 
-           operation = new ProcessPaymentOperation(reservation, false);
+           operation = new ProcessPaymentOperation(false);
         }
 
         [Test]

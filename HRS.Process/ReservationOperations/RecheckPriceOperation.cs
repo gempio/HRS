@@ -12,7 +12,7 @@ namespace HRS.Process.ReservationOperations
 
     class RecheckPriceOperation : AReservationOperation
     {
-        public RecheckPriceOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
+        public RecheckPriceOperation(bool criticalOperation) : base(criticalOperation)
         {
         }
 

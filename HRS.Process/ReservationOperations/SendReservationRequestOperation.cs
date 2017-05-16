@@ -8,17 +8,24 @@ using HRS.Types.AbstractClasses;
 
 namespace HRS.Process.ReservationOperations
 {
-    internal class SendReservationRequestOperation : AReservationOperation
+    using System.CodeDom;
+
+    using HRS.Types.Exceptions;
+
+    public class SendReservationRequestOperation : AReservationOperation
     {
-        public SendReservationRequestOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
+        public SendReservationRequestOperation(bool criticalOperation) : base(criticalOperation)
         {
         }
 
         public override OperationResult ReservationOperation(Reservation reservation)
         {
-            return reservation.NoOfReservees > 100 ? 
-                new OperationResult(false, "Too many people. Reservation Denied.") : 
-                new OperationResult(true, "Reservation success.");
+            if (reservation.Hotel.HotelId > 3 && reservation.Hotel.HotelId < 0)
+            {
+                return new OperationResult(true, "Reservation succeeded.");
+            }
+
+            throw new OperationException("Unsupported hotel!");
         }
     }
 }

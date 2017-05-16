@@ -8,11 +8,13 @@ using HRS.Types.AbstractClasses;
 
 namespace HRS.Process.ReservationOperations
 {
+    using HRS.Types.Exceptions;
+
     public class ProcessPaymentOperation : AReservationOperation
     {
         private Reservation reservation;
 
-        public ProcessPaymentOperation(Reservation reservation, bool criticalOperation) : base(reservation, criticalOperation)
+        public ProcessPaymentOperation(bool criticalOperation) : base(criticalOperation)
         {
         }
 
@@ -20,7 +22,7 @@ namespace HRS.Process.ReservationOperations
         {
             if (reservation.Price < 1)
             {
-                throw new InvalidOperationException("Payment Failed. Invalid Price.");
+                throw new OperationException("Payment Failed. Invalid Price.");
             }
             return new OperationResult(true, "Payment successful.");
         }

@@ -9,6 +9,7 @@ namespace HRS.NunitTests
 {
     using HRS.Process.ReservationOperations;
     using HRS.Types.AbstractClasses;
+    using HRS.Types.Exceptions;
     using HRS.Types.Models;
 
     [TestFixture]
@@ -16,24 +17,28 @@ namespace HRS.NunitTests
     {
         private AReservationOperation _sendEmailOperation;
 
+        private Reservation _reservation;
+
         [SetUp]
         public void SetUp()
         {
-            _sendEmailOperation = new SendSuccessEmailOperation(new Reservation(), false);
+            _reservation = new Reservation{EmailAddress = "Email Address"};
+            
+            _sendEmailOperation = new SendSuccessEmailOperation(false);
         }
 
         [Test]
         public void ShouldSendOnValidEmailAddress()
         {
-            OperationResult result = _sendEmailOperation.ReservationOperation(new Reservation { EmailAddress = "email@address.com" });
-            Assert.AreEqual(true, result.OperationSuccess);
+            OperationResult result = _sendEmailOperation.ReservationOperation(_reservation);
+            Assert.True(result.OperationSuccess);
         }
 
         [Test]
         public void ShouldFailOnInvalidEmailAddress()
         {
-            OperationResult result = _sendEmailOperation.ReservationOperation(new Reservation { EmailAddress = "2" });
-            Assert.AreEqual(false, result.OperationSuccess);
+            _reservation.EmailAddress = "bot";
+            Assert.Throws<OperationException>(() => _sendEmailOperation.ReservationOperation(_reservation));
         }
     }
 }

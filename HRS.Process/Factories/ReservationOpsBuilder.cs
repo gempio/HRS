@@ -35,28 +35,28 @@ namespace HRS.Process.Factories
             
             foreach(OperationConfig config in hotelConfig)
             {
-                operations.Add(ExtractOperation(reservation, config)); 
+                operations.Add(ExtractOperation(config)); 
             }
 
             return operations;
         }
 
-        private static AReservationOperation ExtractOperation(Reservation reservation, OperationConfig config)
+        private static AReservationOperation ExtractOperation(OperationConfig config)
         {
             switch(config.OperationId)
             {
                 case OperationEnum.ProcessPaymentOperation:
-                    return new ProcessPaymentOperation(reservation, config.CriticalOperation);
+                    return new ProcessPaymentOperation(config.CriticalOperation);
                 case OperationEnum.RecheckPriceOperation:
-                    return new RecheckPriceOperation(reservation, config.CriticalOperation);
+                    return new RecheckPriceOperation(config.CriticalOperation);
                 case OperationEnum.SendReservationRequestOperation:
-                    return new SendReservationRequestOperation(reservation, config.CriticalOperation);
+                    return new SendReservationRequestOperation(config.CriticalOperation);
                 case OperationEnum.SendSuccessEmailOperation:
-                    return new SendSuccessEmailOperation(reservation, config.CriticalOperation); 
+                    return new SendSuccessEmailOperation(config.CriticalOperation); 
                 case OperationEnum.StoreReservationOperation:
-                    return new StoreReservationOperation(reservation, config.CriticalOperation);
+                    return new StoreReservationOperation(config.CriticalOperation);
                 default:
-                    throw new InvalidConfigException(string.Format("Invalid configuration value for operationId:{0}", config.OperationId));
+                    throw new InvalidConfigException(string.Format("Invalid configuration value for operationId:{0}", config.OperationId), config.OperationId);
             }
         }
     }

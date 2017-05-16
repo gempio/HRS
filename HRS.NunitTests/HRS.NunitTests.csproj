@@ -59,7 +59,6 @@
     <Compile Include="SendEmailTests.cs" />
     <Compile Include="SendRequestOperationChecks.cs" />
     <Compile Include="TestDataClasses\TestHotelsData.cs" />
-    <Compile Include="TestDataClasses\TestReservations.cs" />
     <Compile Include="TestDataClasses\TestRoomsData.cs" />
     <Compile Include="TestDataClasses\TestUsersData.cs" />
     <Compile Include="TestDataClasses\TestUtility.cs" />
