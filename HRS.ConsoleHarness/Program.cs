@@ -21,7 +21,7 @@
             {
                 Console.WriteLine("{0}. {1}", hotel.HotelId, hotel.HotelName);
             }
-            var chosenHotel = GetUserInput<int>("Please select a hotel:", ReturnTypeEnum.Int);
+            var chosenHotel = GetUserInput<int>("Please select a hotel: ", ReturnTypeEnum.Int);
             reservation.Hotel = hotelList[chosenHotel - 1];
 
 
@@ -37,20 +37,21 @@
                     room.NoOfQueenBeds
                     );
             }
-            int chosenRoom = GetUserInput<int>("Please Select a room:", ReturnTypeEnum.Int);
+            int chosenRoom = GetUserInput<int>("Please Select a room: ", ReturnTypeEnum.Int);
             reservation.Rooms = new List<Room> {roomList[chosenRoom - 1]};
 
-            reservation.DateOfReservation = GetUserInput<DateTime>("Please type in reservation date in dd/mm/yyyy", ReturnTypeEnum.DateTime);
+            reservation.DateOfReservation = GetUserInput<DateTime>("Please type in reservation date in dd/mm/yyyy: ", ReturnTypeEnum.DateTime);
 
-            reservation.NightsToStay = GetUserInput<int>("Please type in no. of nights to stay:", ReturnTypeEnum.Int);
+            reservation.NightsToStay = GetUserInput<int>("Please type in no. of nights to stay: ", ReturnTypeEnum.Int);
 
             reservation.NoOfReservees = GetUserInput<int>("Please enter amount of adults: ", ReturnTypeEnum.Int);
 
             Console.WriteLine("The price for the room is {0}", GetReservationPrice(reservation));
-            Console.WriteLine("Do you accept this reservation?");
+            Console.WriteLine("Do you accept this reservation? ");
 
             Console.ReadLine();
 
+            reservation.Price = GetReservationPrice(reservation);
             reservation.CardNumber = GetUserInput<string>("Please type in your card number: ", ReturnTypeEnum.String); 
             Console.WriteLine("Card number used: {0}", reservation.CardNumber);
 
@@ -63,14 +64,19 @@
             HotelReservationModule hrm = new HotelReservationModule("user", "pass");
             ReservationResult result = hrm.MakeReservation(reservation);
 
-            Console.WriteLine("Process Completed. Reservation result: {0}", result.AdditionalInfo);
+            Console.WriteLine("Process Completed. Reservation result: {0}", result.Success);
+            if (!result.Success)
+            {
+                Console.Write("Reason for failure: {0}", result.AdditionalInfo);
+            }
 
             Console.ReadLine();
         }
 
         private static double GetReservationPrice(Reservation reservation)
         {
-            return (double) (50*((int) reservation.Rooms[0].RoomTypeEnum)*reservation.NightsToStay*reservation.NoOfReservees*reservation.Hotel.HotelId)*0.7;
+            return 50 * (int)reservation.Rooms[0].RoomTypeEnum * reservation.NightsToStay *
+                   reservation.NoOfReservees * reservation.Hotel.HotelId * 0.7;
         }
 
         private static T GetUserInput<T>(string message, ReturnTypeEnum returnType)
