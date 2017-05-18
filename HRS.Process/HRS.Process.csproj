@@ -44,7 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Factories\ReservationOpsBuilder.cs" />
+    <Compile Include="Builders\ReservationOpsBuilder.cs" />
+    <Compile Include="Factories\ReservationOperationFactory.cs" />
     <Compile Include="ReservationOperations\ProcessPaymentOperation.cs" />
     <Compile Include="ReservationOperations\RecheckPriceOperation.cs" />
     <Compile Include="ReservationOperations\SendReservationRequestOperation.cs" />
