@@ -11,5 +11,7 @@ namespace HRS.Types.AbstractClasses
             CriticalOperation = criticalOperation;
         }
         public abstract OperationResult ReservationOperation(Reservation reservation);
+
+        public abstract void RollbackOperation(Reservation reservation);
     }
 }

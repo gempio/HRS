@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factories\ReservationOpsBuilder.cs" />
-    <Compile Include="InputValidator.cs" />
     <Compile Include="ReservationOperations\ProcessPaymentOperation.cs" />
     <Compile Include="ReservationOperations\RecheckPriceOperation.cs" />
     <Compile Include="ReservationOperations\SendReservationRequestOperation.cs" />
@@ -53,7 +52,12 @@
     <Compile Include="ReservationOperations\StoreReservationOperation.cs" />
     <Compile Include="ReservationOperations\UserAuthentication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationOperations\CardNumberValidationOperation.cs" />
+    <Compile Include="ValidationOperations\DateValidationOperation.cs" />
+    <Compile Include="ValidationOperations\EmailCheckValidationOperation.cs" />
+    <Compile Include="ValidationOperations\ValidHotelValidationOperation.cs" />
     <Compile Include="Validators\ConfigValidator.cs" />
+    <Compile Include="Validators\ReservationValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

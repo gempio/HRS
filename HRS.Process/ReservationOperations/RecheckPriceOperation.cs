@@ -19,7 +19,12 @@ namespace HRS.Process.ReservationOperations
                 throw new PriceCheckException(900);
             }
 
-            return new OperationResult(true, string.Empty);
+            return new OperationResult(true, string.Empty, this);
+        }
+
+        public override void RollbackOperation(Reservation reservation)
+        {
+            return;
         }
 
         private bool ValidForDiscount(Reservation reservation)

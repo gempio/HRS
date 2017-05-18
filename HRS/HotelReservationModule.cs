@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using HRS.Types.Models;
 using HRS.Process.Factories;
@@ -32,6 +33,7 @@ namespace HRS
         
         private ReservationResult ProcessOperations(List<AReservationOperation> operations, Reservation reservation)
         {
+            List<OperationResult> results = new List<OperationResult>();
             //TODO: Need to think about how to exctract the try/catch into a separate method or class.
             foreach (AReservationOperation operation in operations)
             {
@@ -41,10 +43,7 @@ namespace HRS
                     //might be some atomic method cherries that could be ran assynchrously.
                     OperationResult result = operation.ReservationOperation(reservation);
 
-                    if (result.AdditionalInfo != string.Empty)
-                    {
-                        Console.WriteLine(result.AdditionalInfo);
-                    }
+                    results.Add(result);
                 }
                 catch (PriceCheckException exn)
                 {
@@ -54,11 +53,8 @@ namespace HRS
                 {
                     if (operation.CriticalOperation)
                     {
+                        RollbackSuccessfulOperations(results, reservation);
                         return new ReservationResult { Success = false, AdditionalInfo = ex.Message };
-                    }
-                    else
-                    {
-                        continue;
                     }
                 }
             }
@@ -67,6 +63,13 @@ namespace HRS
             return new ReservationResult { Success = true, AdditionalInfo = "" };
         }
 
+        private void RollbackSuccessfulOperations(List<OperationResult> results, Reservation reservation)
+        {
+            foreach (OperationResult result in results)
+            {
+                result.Operation.RollbackOperation(reservation);
+            }
+        }
         private ReservationResult ProcessPriceCheckException(List<AReservationOperation> operations, Reservation reservation, int newPrice)
         {
             Console.Write("New Price alert! New price: {0}. Do you agree with the new price?", newPrice);

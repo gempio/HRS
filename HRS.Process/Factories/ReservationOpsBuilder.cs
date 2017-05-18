@@ -56,7 +56,7 @@ namespace HRS.Process.Factories
                 case OperationEnum.StoreReservationOperation:
                     return new StoreReservationOperation(config.CriticalOperation);
                 default:
-                    throw new InvalidConfigException(string.Format("Invalid configuration value for operationId:{0}", config.OperationId), config.OperationId);
+                    throw new InvalidConfigException("Invalid configuration value for operationId:{0}", config.OperationId);
             }
         }
     }

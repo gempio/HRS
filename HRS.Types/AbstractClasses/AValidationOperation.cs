@@ -1,6 +1,9 @@
-﻿namespace HRS.Types.AbstractClasses
+﻿using HRS.Types.Models;
+
+namespace HRS.Types.AbstractClasses
 {
-    class AValidationOperation
+    public abstract class AValidationOperation
     {
+        public abstract bool ValidateOperation(Reservation reservation);
     }
 }

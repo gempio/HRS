@@ -1,12 +1,12 @@
-﻿using HRS.NunitTests.TestDataClasses;
-using HRS.Types.Enums;
-using HRS.Types.Models;
-using System;
-using System.Collections.Generic;
-
-namespace HRS.ConsoleHarness
+﻿namespace HRS.ConsoleHarness
 {
-    class Program
+    using System;
+    using System.Collections.Generic;
+    using NunitTests.TestDataClasses;
+    using Types.Enums;
+    using Types.Models;
+
+    static class Program
     {
         public static void Main(string[] args)
         {
@@ -16,29 +16,29 @@ namespace HRS.ConsoleHarness
 
             Console.WriteLine("Welcome to HRS Console Harness");
 
-            
-            foreach(Hotel hotel in hotelList)
-            {
-                Console.WriteLine(string.Format("{0}. {1}", hotel.HotelId, hotel.HotelName));
-            }
-            int chosenHotel = GetUserInput<int>("Please select a hotel:",ReturnTypeEnum.Int);
-            reservation.Hotel = hotelList[chosenHotel-1];
 
-            
-            foreach(Room room in roomList)
+            foreach (Hotel hotel in hotelList)
+            {
+                Console.WriteLine("{0}. {1}", hotel.HotelId, hotel.HotelName);
+            }
+            var chosenHotel = GetUserInput<int>("Please select a hotel:", ReturnTypeEnum.Int);
+            reservation.Hotel = hotelList[chosenHotel - 1];
+
+
+            foreach (Room room in roomList)
             {
                 Console.WriteLine(
-                    string.Format("{0}. No of Single Beds: " +
+                    "{0}. No of Single Beds: " +
                     "{1}, No of Double Beds {2} " +
                     "No of Queen Beds {3}", 
                     room.RoomTypeEnum, 
                     room.NoOfSingleBeds, 
                     room.NoOfDoubleBeds, 
                     room.NoOfQueenBeds
-                    ));
+                    );
             }
             int chosenRoom = GetUserInput<int>("Please Select a room:", ReturnTypeEnum.Int);
-            reservation.Rooms = new List<Room> { roomList[chosenRoom-1] };
+            reservation.Rooms = new List<Room> {roomList[chosenRoom - 1]};
 
             reservation.DateOfReservation = GetUserInput<DateTime>("Please type in reservation date in dd/mm/yyyy", ReturnTypeEnum.DateTime);
 
@@ -52,18 +52,18 @@ namespace HRS.ConsoleHarness
             Console.ReadLine();
 
             reservation.CardNumber = GetUserInput<string>("Please type in your card number: ", ReturnTypeEnum.String); 
-            Console.WriteLine(string.Format("Card number used: {0}", reservation.CardNumber));
+            Console.WriteLine("Card number used: {0}", reservation.CardNumber);
 
             reservation.EmailAddress = GetUserInput<string>("Please type in your email address: ", ReturnTypeEnum.String); 
             Console.WriteLine("Email Address User: {0}", reservation.EmailAddress);
 
             reservation.ReservationId = TestUtility.GenerateReservationId();
-            Console.Write("Processing reservation: {0}", reservation.ReservationId);
+            Console.WriteLine("Processing reservation: {0}", reservation.ReservationId);
 
             HotelReservationModule hrm = new HotelReservationModule("user", "pass");
-            hrm.MakeReservation(reservation);
+            ReservationResult result = hrm.MakeReservation(reservation);
 
-            Console.WriteLine("Process Completed");
+            Console.WriteLine("Process Completed. Reservation result: {0}", result.AdditionalInfo);
 
             Console.ReadLine();
         }

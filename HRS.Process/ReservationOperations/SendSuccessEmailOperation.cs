@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HRS.Process.ValidationOperations;
 using HRS.Types.AbstractClasses;
 using HRS.Types.Models;
 
@@ -19,13 +20,18 @@ namespace HRS.Process.ReservationOperations
 
         public override OperationResult ReservationOperation(Reservation reservation)
         {
-            var validator = new InputValidator();
-            if (validator.ValidateEmail(reservation.EmailAddress))
+            AValidationOperation operation = new EmailCheckValidationOperation();
+            if (operation.ValidateOperation(reservation))
             {
-                return new OperationResult(true, "Email Successfully sent.");
+                return new OperationResult(true, "Email Successfully sent.", this);
             }
 
             throw new OperationException("Failed to send email. Invalid email address.");
+        }
+
+        public override void RollbackOperation(Reservation reservation)
+        {
+            return;
         }
     }
 }

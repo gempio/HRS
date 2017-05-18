@@ -15,10 +15,15 @@ namespace HRS.Process.ReservationOperations
         {
             if (reservation.Hotel.HotelId > 0 && reservation.Hotel.HotelId < 3)
             {
-                return new OperationResult(true, "Reservation succeeded.");
+                return new OperationResult(true, "Reservation succeeded.", this);
             }
 
             throw new OperationException("Unsupported hotel!");
+        }
+
+        public override void RollbackOperation(Reservation reservation)
+        {
+            return;
         }
     }
 }
